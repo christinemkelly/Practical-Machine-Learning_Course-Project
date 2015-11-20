@@ -1,0 +1,199 @@
+---
+title: "Practical Machine Learning Course Project"
+author: "C. Kelly"
+date: "November 15, 2015"
+output: word_document
+---
+##Synopsis
+Machine learning deals with pattern recognition in data and the use of alogorithims to make predictions about future events. A well-known example of practical machine learning is NetFlix proposing movie selctions for a customer based on past movie selections. By monitoring viewer selections over time, algorithims were written that suggested future selections for the customer.
+
+This project focuses on data about personal activity colected using devices such as Jawbone Up, Nike FuelBand, and Fitbit. Many individuals like to collect data about their daily movements in order to improve their health, to find patterns in their behavior, or because they like to see "their numbers". These devices, and the data collected, are great quantitatively - it's easy to see how much of an activity is done in a day. But in general these devices and the associated measurements say nothing about the qualitity of the activity or movement. An effort was undertaken (http://groupware.les.inf.puc-rio.br/har) to qualify the measurements, that is, to let the user know if the activity or movement was being done correctly. Data from this project was generously provided to Coursera for educational purposes in the Practical Machine Learning course. 
+
+The data consists of measurements from accelerometers placed on the belt, forearm, and arm of six participants, as well as the dumbbell, used in a lifting exercise. Each participant performed a  lift in the correct manner (as instructed by the trainer) and in five incorrect ways (incorporating common mistakes, such as placing the elbows to the front of the body or lifting the dumbbell only halfway) . Each lift, with its corresponding measurements, was assigned a class indicating the qualitity of the lift: Classe A for lifts done correctly and Classe B, C, D, or E if done incorrectly. 
+
+The goal of the Coursera assignment is to use the many accelerometer measurements and classifications captured durnig the lifts to develop a model that correctly predicts the class to which a dumbbel lift belongs in the testing set. Such information would allow a user to determine if the lift was done correctly or not.
+
+##Overall Approach
+Two data sets were provided by Coursera: a training data set (https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv) and a test data set (https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv). The training data will be partioned into a training set (60%) and an out-of-sample test set (40%). Prediction models will be developed and the one with the highest accuracy will be applied to the out-of-sample test to ensure that it works. The selected model will then be used to predict the qualitity of 20 lifts in the test data set; the predicted class results (A - E) of the test data set will be submitted to Coursera for evaluation/grading.
+
+###The Training Data: Initial Analysis, Processing and Model Building
+The training data set was loaded:
+```{r, set working directory, obtain training data, echo=TRUE, results ='hide'}
+setwd("~/Documents/Coursera/1. DataScience/8. Practical Machine Learning/Course Project")
+
+TrainURL <- "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
+
+if(!file.exists("pml-training.csv")) {
+        download.file(TrainURL, destfile = "pml-training.csv", method = 'curl')
+}
+TrainingData <- read.csv("pml-training.csv", na.strings = c("NA", ""))
+```
+
+####Initial Analysis
+An initial exploration of the training data was conducted:
+```{r, initial exploration, echo=TRUE, results = 'hide'}
+dim(TrainingData)  # Training data contains 160 variables and 19622 observations
+head(TrainingData)  # Results hidden
+names(TrainingData)  # Results hidden
+unique(TrainingData$classe)  # Shows that all exercise classes (A - E) are represented 
+highNAs <- colSums(is.na(TrainingData))
+#hist(highNAs)   # There are columns with zero NAs and columns with ~19000 NAs and nothing in between
+table(highNAs)
+```
+
+Columns 1-7 contained non-accelerometer data such as user name, timestamp, etc. These columns will be removed as they have no role in modeling the data. Additionally of the 160 variables (i.e., accelerometer measurements on the belt, forearm, arm and dumbbell capturing details of the exercise movement), 60 are complete (i.e., no NAs) while the remaining 100 variables have nearly 20,000 missing values. These variables will also be removed as they will not contribute to developing a prediction algorithim.
+
+####Data Pre-Processing: Tidying Up
+First columns 1-7 are removed, then the columns with missing values are identified and removed. Finally the remaianing variables are checked for near zero variances; if variables exhibit essentially no variance then these too will be removed as they don't contribute any predictive value in the model.
+
+```{r, remove non-contributing columns , echo=TRUE, results ='hide'}
+tidyTrainingData <- TrainingData[, -(1:7)] 
+
+NACols <- c()
+x  <- length(colnames(tidyTrainingData))
+    for (i in 1:x) {
+       colSum <- colSums(is.na(tidyTrainingData[i]))
+       
+            if (colSum  > 1900) {
+                NACols <- c(NACols,i)
+            } 
+       }
+tidyTrainingData <- tidyTrainingData[, -(NACols)]
+
+library(caret)
+nsv <- nearZeroVar(tidyTrainingData, saveMetrics = TRUE)
+# The returned values of False indicate that all of the remaining variables should be considered in the model.
+```
+
+####Data Partitioning
+The now tidy training data is partioned into a training set and an out-of-sample test set:
+```{r, partitioning the training set , echo=TRUE, results ='hide'}
+
+TrainIndex <- createDataPartition(y=tidyTrainingData$classe, p = .60, list=FALSE)
+tidyTrainingSet  <- tidyTrainingData[TrainIndex,]
+tidyOutSampleTestSet  <- tidyTrainingData[-TrainIndex,]
+```
+####Model Developement
+Eight models were envisioned:
+Models 1 - 4 are based on the Classification and Regression Trees (CART, method = rpart) and Models 5 - 8 use the Random Forest method (method = rf). Within each set, the first model (Models 1 and 5) have no additional features (i.e., no pre-processing or cross-validation). The second model (Models 2 and 6) incorporate pre-processing (centering and scaling). The third model (Models 3 and 7) incorporate cross-valiation and the final model in each method set (Models 4 and 8) use both pre-processing and cross-validation. 
+
+The models based on the rpart method are investigated first followed by the Random Forest models.
+
+#####Models using the CART (rpart) method:
+
+```{r, Building the rpart models , echo=TRUE, results = 'hide'}
+library(rpart)
+# Model 1 (no additional features)
+set.seed(334455)
+Model1Fit  <- train(classe ~ ., data = tidyTrainingSet, method = "rpart")
+print(Model1Fit, digits = 5)
+
+# Model 2 (pre-processing only)
+set.seed(334455)
+Model2Fit  <- train(classe ~ ., preProcess=c('center', 'scale'), data = tidyTrainingSet, method = "rpart")
+print(Model2Fit, digits = 5)
+
+# Model 3 (cross-validation only)
+set.seed(334455)
+Model3Fit  <- train(classe ~ ., trControl = trainControl(method = 'cv', number = 4, allowParallel = TRUE), data = tidyTrainingSet, method = "rpart")
+print(Model3Fit, digits = 5)
+
+# Model 4 (both pre-processing and cross-validation)
+set.seed(334455)
+Model4Fit  <- train(classe ~ ., preProcess=c('center', 'scale'), trControl = trainControl(method = 'cv', number = 4, allowParallel = TRUE), data = tidyTrainingSet, method = "rpart")
+print(Model4Fit, digits = 5)
+```
+The accuracy of the 4 models based on the classification tree (rpart method) were disappointing: accuracy values ranged from 0.484 to 0.494, which are essentially no better than a coin flip! Additionally, a plot of the classification tree for Model 1 never resulted in a prediction outcome of Classe D and we know from the initial look at the data that all 5 classes of exercises (A - E) are in the data set. Thus, the rpart method is totally inadequate as a prediction  model for this data. 
+````{r, Model 1 classification tree, echo=TRUE}
+library(rattle)
+fancyRpartPlot(Model1Fit$finalModel) 
+```
+
+Figure 1: Classification Tree for Model 1
+All 4 models were run but only the tree from Model 1 is shown to do report length constraints. 
+
+With the inadequacy of rpart models established an exploration of the models using the random forest method is thus warrented.
+
+#####Models using the random forest (rf) method:
+It was envisioned that four models using the random forest method would be built (Models 5 - 8) as described above. However based on entries in the discussion board it was apparent that the random forest method was quite time intensive. Indeed, Model 5 (random forest with no pre-processing or cross validation ran for 4.5 hours on my machine (a MacBook Air, 1.3 GHz Intel i5 Processor)) without ever completing. Model 6 (with pre-processing) was not run due to time constraints; Models 7 and 8 (cross-validation and cross-validation plus pre-processing) were run; each took roughly 30 minutes. The outout from Models 7 and 8 is shown in order to substantiate the final choice of model for this project.  
+```{r, Building the rf models , echo=TRUE, results = 'hide'}
+library(randomForest)
+# Model 5 (no additional features)
+#set.seed(334455)
+#Model5Fit  <- train(classe ~ ., data = tidyTrainingSet, method = "rf", prox = TRUE)
+#print(Model5Fit, digits = 5)
+
+# Model 6 (pre-processing only)
+#set.seed(334455)
+#Model6Fit  <- train(classe ~ ., data = tidyTrainingSet, preProcess=c('center', 'scale'),  method = "rf", prox = TRUE, allowParellel = TRUE)
+#print(Model6Fit, digits = 5)
+
+# Model 7 (cross-validation only)
+set.seed(334455)
+Model7Fit  <- train(classe ~ ., data = tidyTrainingSet, method = "rf", prox = TRUE, trControl = trainControl(method = 'cv', number = 3, allowParallel = TRUE))
+print(Model7Fit, digits = 5)
+
+# Model 8 (both pre-processing and cross-validation)
+set.seed(334455)
+Model8Fit  <- train(classe ~ ., data = tidyTrainingSet, method = "rf", prox = TRUE, preProcess=c('center', 'scale'), trControl = trainControl(method = 'cv', number = 3, allowParallel = TRUE))
+print(Model8Fit, digits = 5)
+```
+
+#####Model selection and out-of-sample testing: 
+The model chosen for moving forward in this project is Model 7 (rf with 4-fold cross-validation). Of the two random forest models run (Models 7 and 8), Model 7 had a slightly higher accuracy than Model 8 (0.98565 versus 0.98539) and took essentially the same amount of time to run.
+
+Model 7 was used to test its accuracy by running it on the out-of-sample test set:
+```{r, Out-of-sample test with Model 7 , echo=TRUE}
+predicted  <- predict(Model7Fit, newdata = tidyOutSampleTestSet)
+print(confusionMatrix(predicted, tidyOutSampleTestSet$classe), digits = 3)
+```
+As seen in the confusion Matrix, Model 7 was 99.2% accurate in predicting the class for each exercise in the out-of-sample data set. This corresponds to a 0.8% error rate (1 - accuracy) and provides confidence in using Model 7 for predicting the class outcomes in the test data set.
+
+###Prediction Assignment
+The selected model, Model 7, was applied to the test set provided by Coursera for prediction purposes. The test data was loaded and tidied in the same manner as the training set; Model 7 was then used to predict the class outcome of the 20 exercises in the test data.
+```{r, read in the test data, explore and do any pre-processing, echo=TRUE, results = 'hide'}
+TestURL <- "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
+
+if(!file.exists("pml-testing.csv")) {
+        download.file(TestURL, destfile = "pml-testing.csv", method = 'curl')
+}
+
+TestingData <- read.csv("pml-testing.csv", na.strings = c("NA", ""))
+
+#Check that the test file has the same parameters as the training data file:
+colnames_TrainingData <- colnames(TrainingData)
+colnames_TestingData <- colnames(TestingData)
+all.equal(colnames_TrainingData[1:length(colnames_TrainingData)-1], colnames_TestingData[1:length(colnames_TrainingData)-1]) 
+#Since TRUE is returned then all of the columns match up between the two data sets.
+
+#Explore and tidy the test set in the same manner as the training set:
+tidyTestingData <- TestingData[, -(1:7)]
+
+highNAs <- colSums(is.na(TestingData))
+table(highNAs)
+# Since 100 variables had only 20 missing values, these were not removed from the test data set.
+```
+Model 7 was run on the tidy test set with the following predicted outcomes: 
+```{r, test data predictions, echo=TRUE}
+predictions <- predict(Model7Fit, tidyTestingData)
+predictions <- as.character(predictions)
+predictions
+```
+As a last step, the outcomes were written to the files to be submitted for grading per the project instructions:
+```{r, file writting, echo=TRUE}
+setwd("~/Documents/Coursera/1. DataScience/8. Practical Machine Learning/Course Project/Prediction Answer Files")
+
+pml_write_files = function(x){
+  n = length(x)
+  for(i in 1:n){
+    filename = paste0("problem_id_",i,".txt")
+    write.table(x[i],file=filename,quote=FALSE,row.names=FALSE,col.names=FALSE)
+  }
+}
+#pml_write_files(predictions)
+```
+###Conclusions
+Of the 8 models envisioned for this exercise, the 4 using a classification and regression tree approach (rpart) produced models that predicted the exercise class outcome no better than a coion flip! And none of the models predicted Classe D exercise even though that class exists in the training data set. Better models were produced using the random forest method: due to time constraints only two of the models were investigated: one with 4-fold cross validation and one with both pre-process and cross-validation. Both models had high accuracy (~99%) although Model 7 was slightly higher. Model 7 was used to predict the exercise class outcome of the 20 data points in the test set; with the error rate reported above of 0.8%, there should be only one miss at most in the predictions. 
+
+
+

@@ -1,0 +1,2780 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns:mv="http://macVmlSchemaUri" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name=Title content="Practical Machine Learning Course Project">
+<meta http-equiv=Content-Type content="text/html; charset=macintosh">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+<link rel=File-List href="Course_Project_Report_files/filelist.xml">
+<link rel=Edit-Time-Data href="Course_Project_Report_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Practical Machine Learning Course Project</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>C. Kelly</o:Author>
+  <o:LastAuthor>Christine Kelly</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>71</o:TotalTime>
+  <o:Created>2015-11-20T20:53:00Z</o:Created>
+  <o:LastSaved>2015-11-20T20:53:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>2814</o:Words>
+  <o:Characters>16040</o:Characters>
+  <o:Lines>133</o:Lines>
+  <o:Paragraphs>37</o:Paragraphs>
+  <o:CharactersWithSpaces>18817</o:CharactersWithSpaces>
+  <o:Version>14.0</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="Course_Project_Report_files/themedata.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:DrawingGridHorizontalSpacing>18 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>18 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>JA</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef m:val="off"/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapRight/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="subSup"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" LatentStyleCount="276">
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="99" Name="No List"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"\FF2D\FF33 \30B4\30B7\30C3\30AF";
+	mso-font-charset:78;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1791491579 18 0 131231 0;}
+@font-face
+	{font-family:"\FF2D\FF33 \30B4\30B7\30C3\30AF";
+	mso-font-charset:78;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1791491579 18 0 131231 0;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073743103 0 0 415 0;}
+@font-face
+	{font-family:"Trebuchet MS";
+	panose-1:2 11 6 3 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-520092929 1073806591 9 0 415 0;}
+@font-face
+	{font-family:"Lucida Grande";
+	panose-1:2 11 6 0 4 5 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-520090897 1342218751 0 0 447 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"\FF2D\FF33 \30B4\30B7\30C3\30AF";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#345A8A;
+	mso-themecolor:accent1;
+	mso-themeshade:181;
+	mso-font-kerning:0pt;}
+h2
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:16.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"\FF2D\FF33 \30B4\30B7\30C3\30AF";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;}
+h3
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:14.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"\FF2D\FF33 \30B4\30B7\30C3\30AF";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;}
+h4
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"\FF2D\FF33 \30B4\30B7\30C3\30AF";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;}
+h5
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:12.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"\FF2D\FF33 \30B4\30B7\30C3\30AF";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#4F81BD;
+	mso-themecolor:accent1;
+	font-weight:normal;
+	font-style:italic;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"\FF2D\FF33 \30B4\30B7\30C3\30AF";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#345A8A;
+	mso-themecolor:accent1;
+	mso-themeshade:181;
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{mso-style-unhide:no;
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:Title;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:15.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"\FF2D\FF33 \30B4\30B7\30C3\30AF";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#345A8A;
+	mso-themecolor:accent1;
+	mso-themeshade:181;
+	font-weight:bold;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-unhide:no;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:"Lucida Grande";
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;}
+p.MsoBibliography, li.MsoBibliography, div.MsoBibliography
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.Compact, li.Compact, div.Compact
+	{mso-style-name:Compact;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:1.8pt;
+	margin-right:0in;
+	margin-bottom:1.8pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.Author, li.Author, div.Author
+	{mso-style-name:Author;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.Abstract, li.Abstract, div.Abstract
+	{mso-style-name:Abstract;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:15.0pt;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.BlockQuote, li.BlockQuote, div.BlockQuote
+	{mso-style-name:"Block Quote";
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Calibri;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"\FF2D\FF33 \30B4\30B7\30C3\30AF";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	mso-bidi-font-weight:bold;}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	mso-style-unhide:no;
+	mso-style-next:Definition;
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Definition, li.Definition, div.Definition
+	{mso-style-name:Definition;
+	mso-style-unhide:no;
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+p.TableCaption, li.TableCaption, div.TableCaption
+	{mso-style-name:"Table Caption";
+	mso-style-unhide:no;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.ImageCaption, li.ImageCaption, div.ImageCaption
+	{mso-style-name:"Image Caption";
+	mso-style-unhide:no;
+	mso-style-link:"Body Text Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.BodyTextChar
+	{mso-style-name:"Body Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Image Caption";}
+span.VerbatimChar
+	{mso-style-name:"Verbatim Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"Body Text Char";
+	mso-style-link:"Source Code";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;}
+span.FootnoteRef
+	{mso-style-name:"Footnote Ref";
+	mso-style-unhide:no;
+	mso-style-parent:"Body Text Char";
+	vertical-align:super;}
+span.Link
+	{mso-style-name:Link;
+	mso-style-unhide:no;
+	mso-style-parent:"Body Text Char";
+	color:#4F81BD;
+	mso-themecolor:accent1;}
+p.SourceCode, li.SourceCode, div.SourceCode
+	{mso-style-name:"Source Code";
+	mso-style-unhide:no;
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	word-break:break-all;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+span.KeywordTok
+	{mso-style-name:KeywordTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#007020;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.DataTypeTok
+	{mso-style-name:DataTypeTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#902000;}
+span.DecValTok
+	{mso-style-name:DecValTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#40A070;}
+span.BaseNTok
+	{mso-style-name:BaseNTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#40A070;}
+span.FloatTok
+	{mso-style-name:FloatTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#40A070;}
+span.CharTok
+	{mso-style-name:CharTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#4070A0;}
+span.StringTok
+	{mso-style-name:StringTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#4070A0;}
+span.CommentTok
+	{mso-style-name:CommentTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#60A0B0;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.OtherTok
+	{mso-style-name:OtherTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#007020;}
+span.AlertTok
+	{mso-style-name:AlertTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:red;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.FunctionTok
+	{mso-style-name:FunctionTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#06287E;}
+span.RegionMarkerTok
+	{mso-style-name:RegionMarkerTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;}
+span.ErrorTok
+	{mso-style-name:ErrorTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:red;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.NormalTok
+	{mso-style-name:NormalTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;}
+p.SourceCode0, li.SourceCode0, div.SourceCode0
+	{mso-style-name:"Source Code";
+	mso-style-unhide:no;
+	mso-style-link:"Verbatim Char";
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	background:#F8F8F8;
+	word-break:break-all;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+span.KeywordTok0
+	{mso-style-name:KeywordTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#204A87;
+	background:#F8F8F8;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.DataTypeTok0
+	{mso-style-name:DataTypeTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#204A87;
+	background:#F8F8F8;}
+span.DecValTok0
+	{mso-style-name:DecValTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.BaseNTok0
+	{mso-style-name:BaseNTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.FloatTok0
+	{mso-style-name:FloatTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.CharTok0
+	{mso-style-name:CharTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.StringTok0
+	{mso-style-name:StringTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.CommentTok0
+	{mso-style-name:CommentTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.OtherTok0
+	{mso-style-name:OtherTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;}
+span.AlertTok0
+	{mso-style-name:AlertTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:#EF2929;
+	background:#F8F8F8;}
+span.FunctionTok0
+	{mso-style-name:FunctionTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	color:black;
+	background:#F8F8F8;}
+span.RegionMarkerTok0
+	{mso-style-name:RegionMarkerTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	background:#F8F8F8;}
+span.ErrorTok0
+	{mso-style-name:ErrorTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	background:#F8F8F8;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.NormalTok0
+	{mso-style-name:NormalTok;
+	mso-style-unhide:no;
+	mso-style-parent:"Verbatim Char";
+	mso-ansi-font-size:11.0pt;
+	font-family:Consolas;
+	mso-ascii-font-family:Consolas;
+	mso-hansi-font-family:Consolas;
+	background:#F8F8F8;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Balloon Text";
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;
+	font-family:"Lucida Grande";
+	mso-ascii-font-family:"Lucida Grande";
+	mso-hansi-font-family:"Lucida Grande";
+	mso-bidi-font-family:"Lucida Grande";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Cambria;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-511743558;
+	mso-list-template-ids:1096836132;}
+@list l0:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:0in;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;}
+@list l0:level2
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	margin-left:60.0pt;
+	text-indent:-24.0pt;}
+@list l0:level3
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:96.0pt;
+	text-indent:-24.0pt;}
+@list l0:level4
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	margin-left:132.0pt;
+	text-indent:-24.0pt;}
+@list l0:level5
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	margin-left:168.0pt;
+	text-indent:-24.0pt;}
+@list l0:level6
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	margin-left:204.0pt;
+	text-indent:-24.0pt;}
+@list l0:level7
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	margin-left:240.0pt;
+	text-indent:-24.0pt;}
+@list l0:level8
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l0:level9
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l1
+	{mso-list-id:-452811292;
+	mso-list-template-ids:1125911666;}
+@list l1:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:0in;
+	mso-level-number-position:left;
+	margin-left:24.0pt;
+	text-indent:-24.0pt;}
+@list l1:level2
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	margin-left:60.0pt;
+	text-indent:-24.0pt;}
+@list l1:level3
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:96.0pt;
+	text-indent:-24.0pt;}
+@list l1:level4
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	margin-left:132.0pt;
+	text-indent:-24.0pt;}
+@list l1:level5
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	margin-left:168.0pt;
+	text-indent:-24.0pt;}
+@list l1:level6
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	margin-left:204.0pt;
+	text-indent:-24.0pt;}
+@list l1:level7
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:" ";
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	margin-left:240.0pt;
+	text-indent:-24.0pt;}
+@list l1:level8
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l1:level9
+	{mso-level-start-at:0;
+	mso-level-text:"";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin-top:0in;
+	mso-para-margin-right:0in;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:minor-latin;}
+</style>
+<![endif]-->
+</head>
+
+<body bgcolor=white lang=EN-US style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoTitle><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>Practical
+Machine Learning Course Project<o:p></o:p></span></p>
+
+<p class=Author><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>C.
+Kelly<o:p></o:p></span></p>
+
+<p class=MsoDate><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>November
+15, 2015<o:p></o:p></span></p>
+
+<h2><a name=synopsis></a><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>Synopsis<o:p></o:p></span></h2>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>Machine
+learning deals with pattern recognition in data and the use of alogorithims to
+make predictions about future events. A well-known example of practical machine
+learning is NetFlix proposing movie selctions for a customer based on past
+movie selections. By monitoring viewer selections over time, algorithims were
+written that suggested future selections for the customer.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>This
+project focuses on data about personal activity collected using devices such as
+Jawbone Up, Nike FuelBand, and Fitbit. Many individuals like to collect data
+about their daily movements in order to improve their health, to find patterns
+in their behavior, or because they like to see &quot;their numbers&quot;. These
+devices, and the data collected, are great quantitatively - it's easy to see
+how much of an activity is done in a day. But in general these devices and the
+associated measurements say nothing about the qualitity of the activity or
+movement. An effort was undertaken (<a
+href="http://groupware.les.inf.puc-rio.br/har"><span class=Link><span
+style='text-decoration:none;text-underline:none'>http://groupware.les.inf.puc-rio.br/har</span></span></a>)
+to qualify the measurements, that is, to let the user know if the activity or
+movement was being done correctly. Data from this project was generously
+provided to Coursera for educational purposes in the Practical Machine Learning
+course.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>The
+data consists of measurements from accelerometers placed on the belt, forearm,
+and arm of six participants, as well as the dumbbell, used in a lifting exercise.
+Each participant performed a dumbbell lift in the correct manner (as instructed
+by the trainer) and in five incorrect ways, incorporating common mistakes, such
+as placing the elbows to the front of the body or lifting the dumbbell only
+halfway. Each lift, with its corresponding measurements, was assigned to a
+class indicating the qualitity of the lift: Classe A for lifts done correctly
+and Classe B, C, D, or E if done incorrectly.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>The
+goal of the Coursera assignment is to use the many accelerometer measurements
+and classifications captured durnig the lifts to develop a model that correctly
+predicts the class to which a dumbbel lift belongs in the testing set. Such
+information would allow a user to determine if the lift was done correctly or
+not.<o:p></o:p></span></p>
+
+<h2><a name=overall-approach></a><span style='font-size:10.0pt;font-family:
+"Trebuchet MS"'>Overall Approach<o:p></o:p></span></h2>
+
+<p class=MsoNormal><span class=GramE><span style='font-size:10.0pt;font-family:
+"Trebuchet MS"'>Two data sets were provided by Coursera</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>: a training data set (<a
+href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"><span
+class=Link><span style='text-decoration:none;text-underline:none'>https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv</span></span></a>)
+and a test data set (<a
+href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"><span
+class=Link><span style='text-decoration:none;text-underline:none'>https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv</span></span></a>).
+The training data was partioned into a training set (60%) and an out-of-sample
+test set (40%). Prediction models were developed and the one with the highest
+accuracy applied to the out-of-sample test to ensure that it works. The
+selected model was then used to predict the qualitity of 20 lifts in the test
+data set; the predicted class results (A - E) of the test data set were
+submitted to Coursera for evaluation/grading.<o:p></o:p></span></p>
+
+<h3><a name=the-training-data-initial-analysis-proce></a><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>The Training Data: Initial
+Analysis, Processing and Model Building<o:p></o:p></span></h3>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>The
+training data set was loaded:<o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=GramE><span class=KeywordTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>setwd</span></span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=StringTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>&quot;~/Documents/Coursera/1.
+DataScience/8. Practical Machine Learning/Course Project&quot;</span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>)</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'><o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0><span class=SpellE><span class=NormalTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>TrainURL</span></span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>
+&lt;-</span></span><span class=StringTok0><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'>
+&quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv&quot;</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<br>
+<span class=GramE><span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>if(</span></span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>!</span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>file.exists</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>&quot;pml-training.csv&quot;</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>))
+{</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>download.file</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(TrainURL,
+</span></span><span class=DataTypeTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>destfile =</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'> </span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>&quot;pml-training.csv&quot;</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>,
+</span></span><span class=DataTypeTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>method =</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'> </span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>'curl'</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>)</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>}</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>TrainingData
+&lt;-</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=KeywordTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>read.csv</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>&quot;pml-training.csv&quot;</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>,
+</span></span><span class=DataTypeTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>na.strings =</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'> </span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>c</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>&quot;NA&quot;</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>,
+</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>&quot;&quot;</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>))</span></span><o:p></o:p></span></p>
+
+<p class=MsoNormal><a name=initial-analysis></a><b style='mso-bidi-font-weight:
+normal'><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>Initial
+Exploration<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>An
+initial exploration of the training data was conducted:<o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=GramE><span class=KeywordTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>dim</span></span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>(TrainingData)<span
+style="mso-spacerun:yes">&nbsp; </span></span></span><span class=CommentTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'># Training data contains
+160 variables and 19622 observations</span></span><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'><br>
+<span class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>head</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(TrainingData)<span
+style="mso-spacerun:yes">&nbsp; </span></span></span><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'># Results hidden</span></span><br>
+<span class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>names</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(TrainingData)<span
+style="mso-spacerun:yes">&nbsp; </span></span></span><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'># Results hidden</span></span><br>
+<span class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>unique</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(TrainingData$classe)<span
+style="mso-spacerun:yes">&nbsp; </span></span></span><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'># Shows that all
+exercise classes (A - E) are represented </span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>highNAs
+&lt;-</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=KeywordTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>colSums</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>is.na</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(TrainingData))<o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0><span class=SpellE><span class=GramE><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+font-style:normal'>hist</span></span></span></span><span class=CommentTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS";font-style:normal'>(<span
+class=SpellE>highNAs</span>)<span style="mso-spacerun:yes">&nbsp;&nbsp;
+</span># There are columns with zero NAs and columns with ~19000 NAs and
+nothing in between</span></span><span style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<br>
+<i style='mso-bidi-font-style:normal'><span style='color:#8F5902;background:
+#F8F8F8;mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Picture_x0020_2" o:spid="_x0000_i1026" type="#_x0000_t75"
+ style='width:3in;height:177pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Course_Project_Report_files/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=218 height=179
+src="Course_Project_Report_files/image002.png" v:shapes="Picture_x0020_2"><![endif]></span></i><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0><span class=GramE><span class=KeywordTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>table</span></span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>(<span
+class=SpellE>highNAs</span>)</span></span><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>Columns
+1-7 contained non-accelerometer data such as user name, timestamp, etc. These
+columns were targeted for <span class=GramE>removal</span> as they have no role
+in modeling the data. Additionally of the 160 variables (i.e., accelerometer
+measurements on the belt, forearm, arm and dumbbell capturing details of the
+exercise movement), 60 were complete (i.e., no NAs) while the remaining 100
+variables <span class=SpellE>hae</span> nearly 20,000 missing values. These
+variables were also targeted for <span class=GramE>removal</span> as they do
+not contribute to developing a prediction algorithim.<o:p></o:p></span></p>
+
+<h4><a name=data-pre-processing-tidying-up></a><span style='font-size:10.0pt;
+font-family:"Trebuchet MS";color:windowtext'>Data Pre-Processing: Tidying Up<o:p></o:p></span></h4>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>First
+columns 1-7 were removed; columns with missing values were identified and
+removed. Finally the remaianing variables were checked for near zero variances;
+if variables exhibit essentially no variance then they would be removed as well.<o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=GramE><span class=NormalTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>tidyTrainingData</span></span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>
+&lt;-</span></span><span class=StringTok0><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=NormalTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>TrainingData[, -(</span></span><span
+class=DecValTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>1</span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>:</span></span><span
+class=DecValTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>7</span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>)] </span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>NACols
+&lt;-</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=KeywordTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>c</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>()</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>x<span
+style="mso-spacerun:yes">&nbsp; </span>&lt;-</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>
+</span></span><span class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>length</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>colnames</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(tidyTrainingData))</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>for (i in </span></span><span
+class=DecValTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>1</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>:x)
+{</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>colSum
+&lt;-</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=KeywordTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>colSums</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>is.na</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(tidyTrainingData[i]))</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>if (colSum<span style="mso-spacerun:yes">&nbsp; </span>&gt;</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>
+</span></span><span class=DecValTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>1900</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>) {</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>NACols &lt;-</span></span><span class=StringTok0><span style='mso-ansi-font-size:
+10.0pt;font-family:"Trebuchet MS"'> </span></span><span class=KeywordTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>c</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(NACols,i)</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>} </span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>tidyTrainingData
+&lt;-</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>tidyTrainingData[,
+-(NACols)]</span></span><br>
+<br>
+<span class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>library</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(caret)</span></span><o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=VerbatimChar><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'>## Loading required package: lattice</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<span class=VerbatimChar><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>## Loading required package: ggplot2</span></span><o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=GramE><span class=NormalTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>nsv</span></span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>
+&lt;-</span></span><span class=StringTok0><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=KeywordTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>nearZeroVar</span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>(tidyTrainingData,
+</span></span><span class=DataTypeTok0><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'>saveMetrics =</span></span><span class=NormalTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'> </span></span><span
+class=OtherTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>TRUE</span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>)</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'># The returned values of False indicate that all of the
+remaining variables should be considered in the model.</span></span><o:p></o:p></span></p>
+
+<h4><a name=data-partitioning></a><span style='font-size:10.0pt;font-family:
+"Trebuchet MS"'>Data Partitioning<o:p></o:p></span></h4>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>The
+tidy training data was partioned into a training set and an out-of-sample test
+set:<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=SpellE><span class=GramE><span class=NormalTok0><span style='font-size:
+10.0pt;font-family:"Trebuchet MS"'>set.seed</span></span></span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>(334455)<o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=SpellE><span class=NormalTok0><span style='font-size:10.0pt;font-family:
+"Trebuchet MS"'>TrainIndex</span></span></span><span class=NormalTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'> &lt;-</span></span><span
+class=StringTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'> </span></span><span
+class=GramE><span class=KeywordTok0><span style='font-size:10.0pt;font-family:
+"Trebuchet MS"'>createDataPartition</span></span><span class=NormalTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span></span><span
+class=DataTypeTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>y=</span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>tidyTrainingData$classe,
+</span></span><span class=DataTypeTok0><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'>p =</span></span><span class=NormalTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'> .</span></span><span
+class=DecValTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>60</span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>, </span></span><span
+class=DataTypeTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>list=</span></span><span
+class=OtherTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>FALSE</span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>)</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>tidyTrainingSet<span
+style="mso-spacerun:yes">&nbsp; </span>&lt;-</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>
+</span></span><span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>tidyTrainingData[TrainIndex,]</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>tidyOutSampleTestSet<span
+style="mso-spacerun:yes">&nbsp; </span>&lt;-</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>
+</span></span><span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>tidyTrainingData[-TrainIndex,]</span></span><span
+style='background:#F8F8F8'><o:p></o:p></span></span></p>
+
+<h4><a name=model-developement></a><span style='font-size:10.0pt;font-family:
+"Trebuchet MS"'>Model Developement<o:p></o:p></span></h4>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>Eight
+models were envisioned: Models 1 - 4 were based on the Classification and
+Regression Trees (CART, method = rpart) and Models 5 - 8 used the Random Forest
+method (method = rf). Within each set, the first model (Models 1 and 5) has no
+additional features (i.e., no pre-processing or cross-validation). The second
+model (Models 2 and 6) incorporated pre-processing (centering and scaling). The
+third model (Models 3 and 7) incorporated cross-valiation and the final model
+in each method set (Models 4 and 8) used both pre-processing and
+cross-validation.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>The
+models based on the rpart method were investigated first followed by the Random
+Forest models.<o:p></o:p></span></p>
+
+<h5><a name=models-using-the-cart-rpart-method></a><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'>Models using the CART (rpart) method:<o:p></o:p></span></h5>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=GramE><span class=KeywordTok0><span style='font-size:10.0pt;font-family:
+"Trebuchet MS"'>library</span></span></span><span class=NormalTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>(rpart)</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'># Model 1 (no additional features)</span></span><br>
+<span class=SpellE><span class=CommentTok0><span style='mso-ansi-font-size:
+10.0pt;font-family:"Trebuchet MS"'>set.seed</span></span></span><span
+class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(334455)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>Model1Fit<span style="mso-spacerun:yes">&nbsp; </span>&lt;-
+train(classe ~ ., data = tidyTrainingSet, method = &quot;rpart&quot;)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>print(Model1Fit, digits = 5)</span></span><br>
+##CART <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##11776 samples<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##52 predictor<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##5 classes: 'A', 'B', 'C',
+'D', '<span class=GramE>E'</span> <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##No pre-processing<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Resampling: Bootstrapped
+(25 reps) <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Summary of sample sizes:
+11776, 11776, 11776, 11776, 11776, <span class=GramE>11776</span>, ... <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Resampling results across
+tuning parameters:<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp; </span><span class=SpellE>cp</span></span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Accuracy<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>Kappa<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Accuracy
+SD<span style="mso-spacerun:yes">&nbsp; </span>Kappa SD<span
+style="mso-spacerun:yes">&nbsp; </span><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp; </span>0.03968913</span><span
+style="mso-spacerun:yes">&nbsp; </span>0.4932138<span
+style="mso-spacerun:yes">&nbsp; </span>0.34354110<span
+style="mso-spacerun:yes">&nbsp; </span>0.06303997<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.10392753<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>## <span class=GramE>0.04921096<span
+style="mso-spacerun:yes">&nbsp; </span>0.4004392</span><span
+style="mso-spacerun:yes">&nbsp; </span>0.18685580<span
+style="mso-spacerun:yes">&nbsp; </span>0.06014452<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.10107793<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp; </span>0.11497390</span><span
+style="mso-spacerun:yes">&nbsp; </span>0.3167178<span
+style="mso-spacerun:yes">&nbsp; </span>0.05394947<span
+style="mso-spacerun:yes">&nbsp; </span>0.04164765<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.06217517<o:p></o:p></span></p>
+
+<p class=SourceCode0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Accuracy
+was used to select the optimal model using the largest value.<o:p></o:p></span></p>
+
+<p class=SourceCode0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>##The
+final value used for the model was <span class=SpellE>cp</span> = 0.03968913.<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'># Model 2 (pre-processing only)</span></span><br>
+<span class=SpellE><span class=GramE><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>set.seed</span></span></span></span><span
+class=GramE><span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>(</span></span></span><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>334455)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>Model2Fit<span style="mso-spacerun:yes">&nbsp; </span>&lt;-
+train(classe ~ ., preProcess=c('center', 'scale'), data = tidyTrainingSet,
+method = &quot;rpart&quot;)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>print(Model2Fit, digits = 5)</span></span><br>
+##CART <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##11776 samples<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##52 predictor<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##5 classes: 'A', 'B', 'C',
+'D', '<span class=GramE>E'</span> <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Pre-processing: centered
+(52), scaled (52) <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Resampling: Bootstrapped
+(25 reps) <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Summary of sample sizes:
+11776, 11776, 11776, 11776, 11776, <span class=GramE>11776</span>, ... <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Resampling results across
+tuning parameters:<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp; </span>##<span class=SpellE>cp</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Accuracy<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>Kappa<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Accuracy <span
+class=GramE>SD<span style="mso-spacerun:yes">&nbsp; </span>Kappa</span> SD<span
+style="mso-spacerun:yes">&nbsp; </span><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp; </span>##<span class=GramE>0.03251068<span
+style="mso-spacerun:yes">&nbsp; </span>0.5108935</span><span
+style="mso-spacerun:yes">&nbsp; </span>0.36163872<span
+style="mso-spacerun:yes">&nbsp; </span>0.03634654<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.05628157<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp; </span>##<span class=GramE>0.05987977<span
+style="mso-spacerun:yes">&nbsp; </span>0.3788920</span><span
+style="mso-spacerun:yes">&nbsp; </span>0.15038278<span
+style="mso-spacerun:yes">&nbsp; </span>0.04327420<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.07037543<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp; </span>##<span class=GramE>0.11485524<span
+style="mso-spacerun:yes">&nbsp; </span>0.3236184</span><span
+style="mso-spacerun:yes">&nbsp; </span>0.06411121<span
+style="mso-spacerun:yes">&nbsp; </span>0.04062571<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.06295213<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Accuracy was used to
+select the optimal model <span class=GramE>using<span
+style="mso-spacerun:yes">&nbsp; </span>the</span> largest value.<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##The final value used for
+the model was <span class=SpellE>cp</span> = 0.03251068.<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'># Model 3 (cross-validation only)</span></span><br>
+<span class=SpellE><span class=GramE><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>set.seed</span></span></span></span><span
+class=GramE><span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>(</span></span></span><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>334455)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>Model3Fit<span style="mso-spacerun:yes">&nbsp; </span>&lt;-
+train(classe ~ ., trControl = trainControl(method = 'cv', number = 4,
+allowParallel = TRUE), data = tidyTrainingSet, method = &quot;rpart&quot;)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>print(Model3Fit, digits = 5)</span></span><br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##CART <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##11776 samples<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;</span>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp; </span>52</span> predictor<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>5</span> classes: 'A', 'B',
+'C', 'D', 'E' <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##No pre-processing<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Resampling: <span
+class=GramE>Cross-Validated</span> (4 fold) <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Summary of sample sizes:
+8833, 8833, 8831, <span class=GramE>8831</span> <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Resampling results across
+tuning parameters:<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp; </span><span class=SpellE>cp</span></span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Accuracy<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>Kappa<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Accuracy
+SD<span style="mso-spacerun:yes">&nbsp; </span>Kappa SD<span
+style="mso-spacerun:yes">&nbsp; </span><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>## <span class=GramE>0.03251068<span
+style="mso-spacerun:yes">&nbsp; </span>0.5014403</span><span
+style="mso-spacerun:yes">&nbsp; </span>0.34821896<span
+style="mso-spacerun:yes">&nbsp; </span>0.01141907<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.01490447<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>## <span class=GramE>0.05987977<span
+style="mso-spacerun:yes">&nbsp; </span>0.4284979</span><span
+style="mso-spacerun:yes">&nbsp; </span>0.22999634<span
+style="mso-spacerun:yes">&nbsp; </span>0.07163415<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.12067478<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp; </span>0.11485524</span><span
+style="mso-spacerun:yes">&nbsp; </span>0.3446909<span
+style="mso-spacerun:yes">&nbsp; </span>0.09214214<span
+style="mso-spacerun:yes">&nbsp; </span>0.04033978<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.06146364<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Accuracy was used to
+select the optimal model <span class=GramE>using<span
+style="mso-spacerun:yes">&nbsp; </span>the</span> largest value.<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##The final value used for
+the model was <span class=SpellE>cp</span> = 0.03251068.<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'># Model 4 (both pre-processing and cross-validation)</span></span><br>
+<span class=SpellE><span class=GramE><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>set.seed</span></span></span></span><span
+class=GramE><span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>(</span></span></span><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>334455)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>Model4Fit<span style="mso-spacerun:yes">&nbsp; </span>&lt;-
+train(classe ~ ., preProcess=c('center', 'scale'), trControl =
+trainControl(method = 'cv', number = 4, allowParallel = TRUE), data =
+tidyTrainingSet, method = &quot;rpart&quot;)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>print(Model4Fit, digits = 5)<o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##<span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'>CART <o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##<span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'>11776 samples<o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><span style="mso-spacerun:yes">&nbsp;&nbsp;
+</span>52</span></span></span><span class=CommentTok0><span style='mso-ansi-font-size:
+10.0pt;font-family:"Trebuchet MS";color:windowtext;font-style:normal'>
+predictor<o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>5</span></span></span><span
+class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'> classes: 'A', 'B', 'C', 'D', 'E' <o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##<span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'>Pre-processing: centered (52), scaled (52) <o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##<span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'>Resampling: <span class=GramE>Cross-Validated</span> (4
+fold) <o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##<span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'>Summary of sample sizes: 8833, 8833, 8831, <span
+class=GramE>8831</span> <o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##<span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'>Resampling results across tuning parameters:<o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><span style="mso-spacerun:yes">&nbsp;
+</span><span class=SpellE>cp</span></span></span></span><span
+class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Accuracy<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>Kappa<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Accuracy
+SD<span style="mso-spacerun:yes">&nbsp; </span>Kappa SD<span
+style="mso-spacerun:yes">&nbsp; </span><o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><span style="mso-spacerun:yes">&nbsp;
+</span>0.03251068</span></span></span><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'><span style="mso-spacerun:yes">&nbsp; </span>0.5014403<span
+style="mso-spacerun:yes">&nbsp; </span>0.34821896<span
+style="mso-spacerun:yes">&nbsp; </span>0.01141907<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.01490447<o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><span style="mso-spacerun:yes">&nbsp;
+</span>0.05987977</span></span></span><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'><span style="mso-spacerun:yes">&nbsp; </span>0.4284979<span
+style="mso-spacerun:yes">&nbsp; </span>0.22999634<span
+style="mso-spacerun:yes">&nbsp; </span>0.07163415<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.12067478<o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><span style="mso-spacerun:yes">&nbsp;
+</span>0.11485524</span></span></span><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'><span style="mso-spacerun:yes">&nbsp; </span>0.3446909<span
+style="mso-spacerun:yes">&nbsp; </span>0.09214214<span
+style="mso-spacerun:yes">&nbsp; </span>0.04033978<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.06146364<o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##<span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'>Accuracy was used to select the optimal model <span
+class=GramE>using<span style="mso-spacerun:yes">&nbsp; </span>the</span>
+largest value.<o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##<span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'>The final value used for the model was <span class=SpellE>cp</span>
+= 0.03251068.<o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>The
+accuracy of the 4 models based on the classification tree (rpart method) was
+very disappointing: accuracy values ranged from 0.484 to 0.494, which were
+essentially no better than a coin flip! Additionally, a plot of the
+classification tree for Model 1 (Figure 1) resulted in zero predictions for
+Classe D and it was known from the initial look at the data that all 5 classes
+of exercises (A - E) were in the training set. Thus, the rpart method was deemed
+to be totally inadequate as a prediction model for this data.<o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=GramE><span class=KeywordTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>library</span></span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>(rattle)</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=VerbatimChar><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'>## R session is headless; GTK+ not initialized.</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<span class=VerbatimChar><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>## Rattle: A free graphical interface for data mining with R.</span></span><br>
+<span class=VerbatimChar><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>## Version 4.0.0 Copyright (c) 2006-2015 Togaware Pty Ltd.</span></span><br>
+<span class=VerbatimChar><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>## Type <span class=GramE>'rattle(</span>)' to shake, rattle,
+and roll your data.</span></span><o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=SpellE><span class=GramE><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>fancyRpartPlot</span></span></span></span><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>(Model1Fit$finalModel)
+</span></span><span style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:40.5pt'><span style='font-size:10.0pt;
+font-family:"Trebuchet MS";mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_1"
+ o:spid="_x0000_i1025" type="#_x0000_t75" style='width:5in;height:296pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Course_Project_Report_files/image003.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=362 height=298
+src="Course_Project_Report_files/image004.png" v:shapes="Picture_x0020_1"><![endif]></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+text-align:center'><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>Figure
+1: Classification Tree for Model 1<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+text-align:center'><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>This
+plot was generated for Models 2, 3, and 4 as well; each showed similar
+outcomes. Only the tree from Model 1 is shown to do report length constraints.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>With
+the inadequacy of rpart models established, an exploration of the models using
+the random forest method was thus warrented.<o:p></o:p></span></p>
+
+<h5><a name=models-using-the-random-forest-rf-method></a><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>Models using the random
+forest (rf) method:<o:p></o:p></span></h5>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>It
+was envisioned that four models using the random forest method would be built
+(Models 5 - 8) as described above. However based on entries in the <span
+class=SpellE>Coursera</span> discussion board it was apparent that the random
+forest method was quite time intensive. Indeed, Model 5 (random forest with no
+pre-processing or cross validation) ran for 4.5 hours on my machine (a MacBook Air,
+1.3 GHz Intel i5 Processor) without ever completing. Model 6 (with
+pre-processing) encountered the same issue; Models 7 and 8 (cross-validation
+and cross-validation plus pre-processing) were run; each took roughly 30
+minutes. <span class=GramE>The outout</span> from Models 7 and 8 is shown in
+order to substantiate the final choice of model for this project.<o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=GramE><span class=KeywordTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>library</span></span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>(randomForest)</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=VerbatimChar><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'>## <span class=GramE>randomForest</span> 4.6-12</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<span class=VerbatimChar><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>## Type rfNews() to see new features/changes/bug fixes.</span></span><o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=CommentTok0><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'># Model 5 (no additional features)</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>#<span class=GramE>set.seed(</span>334455)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>#Model5Fit<span style="mso-spacerun:yes">&nbsp; </span>&lt;-
+train(classe ~ ., data = tidyTrainingSet, method = &quot;rf&quot;, prox = TRUE)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>#print(Model5Fit, digits = 5)</span></span><br>
+<br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'># Model 6 (pre-processing only)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>#set.seed(334455)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>#Model6Fit<span style="mso-spacerun:yes">&nbsp; </span>&lt;-
+train(classe ~ ., data = tidyTrainingSet, preProcess=c('center', 'scale'),<span
+style="mso-spacerun:yes">&nbsp; </span>method = &quot;rf&quot;, prox = TRUE,
+allowParellel = TRUE)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>#print(Model6Fit, digits = 5)</span></span><br>
+<br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'># Model 7 (cross-validation only)</span></span><br>
+<span class=SpellE><span class=CommentTok0><span style='mso-ansi-font-size:
+10.0pt;font-family:"Trebuchet MS"'>set.seed</span></span></span><span
+class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(334455)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>Model7Fit<span style="mso-spacerun:yes">&nbsp; </span>&lt;-
+train(classe ~ ., data = tidyTrainingSet, method = &quot;rf&quot;, prox = TRUE,
+trControl = trainControl(method = 'cv', number = 3, allowParallel = TRUE))</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>print(Model7Fit, digits = 5)</span></span><br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Random Forest <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##11776 samples<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>52</span> predictor<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;</span>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>5</span> classes: 'A', 'B', 'C',
+'D', 'E' <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##No pre-processing<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Resampling: <span
+class=GramE>Cross-Validated</span> (3 fold) <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Summary of sample sizes:
+7850, 7851, <span class=GramE>7851</span> <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Resampling results across
+tuning parameters:<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp; </span><span class=SpellE>mtry</span></span><span
+style="mso-spacerun:yes">&nbsp; </span>Accuracy<span
+style="mso-spacerun:yes">&nbsp; </span>Kappa<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>Accuracy SD<span
+style="mso-spacerun:yes">&nbsp; </span>Kappa SD <o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>2</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.98497<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.98098<span
+style="mso-spacerun:yes">&nbsp; </span>0.0015509<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.0019626<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp; </span>27</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.98616<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.98249<span
+style="mso-spacerun:yes">&nbsp; </span>0.0047140<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.0059633<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp; </span>52</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.97809<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.97228<span
+style="mso-spacerun:yes">&nbsp; </span>0.0044111<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.0055776<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##Accuracy was used to
+select the optimal model <span class=GramE>using<span
+style="mso-spacerun:yes">&nbsp; </span>the</span> largest value.<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>##The final value used for
+the model was <span class=SpellE>mtry</span> = 27.<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'># Model 8 (both pre-processing and cross-validation)</span></span><br>
+<span class=SpellE><span class=GramE><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>set.seed</span></span></span></span><span
+class=GramE><span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>(</span></span></span><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>334455)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>Model8Fit<span style="mso-spacerun:yes">&nbsp; </span>&lt;-
+train(classe ~ ., data = tidyTrainingSet, method = &quot;rf&quot;, prox = TRUE,
+preProcess=c('center', 'scale'), trControl = trainControl(method = 'cv', number
+= 3, allowParallel = TRUE))</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>print(Model8Fit, digits = 5)</span></span><span
+class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##Random Forest <o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##11776 samples<o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>52</span> predictor<o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>5</span> classes: 'A', 'B',
+'C', 'D', 'E' <o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##Pre-processing: centered (52), scaled
+(52) <o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##Resampling: <span class=GramE>Cross-Validated</span>
+(3 fold) <o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##Summary of sample sizes: 7850, 7851, <span
+class=GramE>7851</span> <o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##Resampling results across tuning
+parameters:<o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp; </span><span class=SpellE>mtry</span></span><span
+style="mso-spacerun:yes">&nbsp; </span>Accuracy<span
+style="mso-spacerun:yes">&nbsp; </span>Kappa<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>Accuracy SD<span
+style="mso-spacerun:yes">&nbsp; </span>Kappa SD <o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>2</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.98590<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.98216<span
+style="mso-spacerun:yes">&nbsp; </span>0.0022993<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.0029097<o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp; </span>27</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.98658<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.98303<span
+style="mso-spacerun:yes">&nbsp; </span>0.0039663<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.0050170<o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp; </span>52</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.97750<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>0.97153<span
+style="mso-spacerun:yes">&nbsp; </span>0.0040452<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.0051148<o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'><o:p>&nbsp;</o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##Accuracy was used to select the optimal
+model <span class=GramE>using<span style="mso-spacerun:yes">&nbsp; </span>the</span>
+largest value.<o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##The final value used for the model was <span
+class=SpellE>mtry</span> = 27.</span></span><i style='mso-bidi-font-style:normal'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS";color:#8F5902;background:
+#F8F8F8'><o:p></o:p></span></i></p>
+
+<h5><a name=model-selection-and-out-of-sample-testin></a><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>Model selection and
+out-of-sample testing:<o:p></o:p></span></h5>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>The
+Model 7 (<span class=SpellE>rf</span> with 4-fold cross-validation) was chosen
+for moving forward in this project. Of the two random forest models run (Models
+7 and 8), Model 7 had a slightly higher accuracy than Model 8 (0.98565 versus
+0.98539) and took essentially the same amount of time to run.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>Model
+7 was used to test accuracy by running it on the out-of-sample test set:<o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=GramE><span class=CommentTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>predicted</span></span></span><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp; </span>&lt;- predict(Model7Fit, newdata =
+tidyOutSampleTestSet)</span></span><span style='font-size:10.0pt;font-family:
+"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=GramE><span class=CommentTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>print</span></span></span><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>(<span
+class=SpellE>confusionMatrix</span>(predicted, tidyOutSampleTestSet$classe),
+digits = 3)<o:p></o:p></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##</span></span><span style='font-size:
+10.0pt;font-family:"Trebuchet MS"'>Confusion Matrix and Statistics<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Reference</span></span></span><span style='font-size:10.0pt;font-family:
+"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##</span></span><span style='font-size:
+10.0pt;font-family:"Trebuchet MS"'>Prediction<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>A<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>B<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>C<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>D<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>E<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>A</span> 2231<span style="mso-spacerun:yes">&nbsp;&nbsp; </span>20<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=SpellE>0</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=SpellE>0</span></span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>B</span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>1
+1492<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>5<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>1</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>C</span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>6 1358<span
+style="mso-spacerun:yes">&nbsp;&nbsp; </span>18<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>1</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>D</span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=SpellE>0</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>5 1265<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>4</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;</span><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;</span>E</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=SpellE>0</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span class=SpellE>0</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>3 1436</span></span><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##</span></span><span style='font-size:
+10.0pt;font-family:"Trebuchet MS"'>Overall Statistics<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Accuracy</span> : 0.992<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>95</span>% CI : (0.99, 0.994)</span></span><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>No</span> Information Rate :
+0.284<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>P</span>-Value [<span
+class=SpellE>Acc</span> &gt; NIR] : &lt;2e-16<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;</span></span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Kappa</span> : 0.99<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##</span></span><span style='font-size:
+10.0pt;font-family:"Trebuchet MS"'> <span class=SpellE>Mcnemar's</span> Test P-<span
+class=GramE>Value :</span> NA<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>Statistics by Class:<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;</span><span class=CommentTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";color:windowtext;
+font-style:normal'>#<span class=GramE>#<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Class</span>: A Class: B Class: C Class: D Class: E</span></span><o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##</span></span><span style='font-size:
+10.0pt;font-family:"Trebuchet MS"'>Sensitivity<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.000<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.983<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.993<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.984<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.996<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##</span></span><span style='font-size:
+10.0pt;font-family:"Trebuchet MS"'>Specificity<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>0.996<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.999<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.996<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.999<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>1.000<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##</span></span><span class=SpellE><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>Pos</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'> <span class=SpellE>Pred</span>
+Value<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>0.991<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.995<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.982<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.993<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.998<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##</span></span><span class=SpellE><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>Neg</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'> <span class=SpellE>Pred</span>
+Value<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.000<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.996<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.998<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.997<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.999<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##</span></span><span style='font-size:
+10.0pt;font-family:"Trebuchet MS"'>Prevalence<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>0.284<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.193<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.174<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.164<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.184<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##</span></span><span style='font-size:
+10.0pt;font-family:"Trebuchet MS"'>Detection Rate<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>0.284<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.190<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.173<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.161<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.183<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##</span></span><span style='font-size:
+10.0pt;font-family:"Trebuchet MS"'>Detection Prevalence<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.287<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.191<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.176<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.162<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.183<o:p></o:p></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##</span></span><span style='font-size:
+10.0pt;font-family:"Trebuchet MS"'>Balanced Accuracy<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>0.998<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.991<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.994<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.991<span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>0.998<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>As
+seen in the confusion Matrix, Model 7 was 99.2% accurate in predicting the
+class for each exercise in the out-of-sample data set. This corresponds to a
+0.8% error rate (1 - accuracy) and provides confidence in using Model 7 for
+predicting the class outcomes in the test data set.<o:p></o:p></span></p>
+
+<h3><a name=prediction-assignment></a><span style='font-size:10.0pt;font-family:
+"Trebuchet MS"'>Prediction Assignment<o:p></o:p></span></h3>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>Model
+7 was applied to the test set provided by Coursera for prediction purposes. The
+test data was loaded and tidied in the same manner as the training set; Model 7
+was then used to predict the class outcome of the 20 exercises in the test
+data.<o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=NormalTok0><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'>TestURL &lt;-</span></span><span class=StringTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>
+&quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv&quot;</span></span><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'><br>
+<br>
+<span class=GramE><span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>if(</span></span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>!</span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>file.exists</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>&quot;pml-testing.csv&quot;</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>))
+{</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>download.file</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(TestURL,
+</span></span><span class=DataTypeTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>destfile =</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'> </span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>&quot;pml-testing.csv&quot;</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>,
+</span></span><span class=DataTypeTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>method =</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'> </span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>'curl'</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>)</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>}</span></span><br>
+<br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>TestingData
+&lt;-</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=KeywordTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>read.csv</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>&quot;pml-testing.csv&quot;</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>,
+</span></span><span class=DataTypeTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>na.strings =</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'> </span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>c</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>&quot;NA&quot;</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>,
+</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>&quot;&quot;</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>))</span></span><br>
+<br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>#Check that the test file has the same parameters as the
+training data file:</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>colnames_TrainingData
+&lt;-</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=KeywordTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>colnames</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(TrainingData)</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>colnames_TestingData
+&lt;-</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=KeywordTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>colnames</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(TestingData)</span></span><br>
+<span class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>all.equal</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(colnames_TrainingData[</span></span><span
+class=DecValTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>1</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>:</span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>length</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(colnames_TrainingData)-</span></span><span
+class=DecValTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>1</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>],
+colnames_TestingData[</span></span><span class=DecValTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>1</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>:</span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>length</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(colnames_TrainingData)-</span></span><span
+class=DecValTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>1</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>])
+</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>#Since TRUE is returned then all of the columns match up
+between the two data sets.</span></span><br>
+<br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>#Explore and tidy the test set in the same manner as the training
+set:</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>tidyTestingData
+&lt;-</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=GramE><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>TestingData[</span></span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>,
+-(</span></span><span class=DecValTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>1</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>:</span></span><span
+class=DecValTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>7</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>)]</span></span><br>
+<br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>highNAs
+&lt;-</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=KeywordTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>colSums</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>is.na</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(TestingData))</span></span><br>
+<span class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>table</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(highNAs)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'># Since 100 variables had only 20 missing values, these were
+not removed from the test data set.</span></span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>Model
+7 was run on the tidy test set with the following predicted outcomes:<o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=GramE><span class=CommentTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>predictions</span></span></span><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>
+&lt;- predict(Model7Fit, tidyTestingData)</span></span><span style='font-size:
+10.0pt;font-family:"Trebuchet MS"'><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>predictions &lt;- as.character(predictions)</span></span><br>
+<span class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:
+"Trebuchet MS"'>predictions<o:p></o:p></span></span></span></p>
+
+<p class=SourceCode0 style='margin:0in;margin-bottom:.0001pt'><span
+class=CommentTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>##[1] &quot;B&quot; &quot;A&quot;
+&quot;B&quot; &quot;A&quot; &quot;A&quot; &quot;E&quot; &quot;D&quot;
+&quot;B&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;C&quot;
+&quot;B&quot; &quot;A&quot; &quot;E&quot; &quot;E&quot; &quot;A&quot; &quot;B&quot;
+&quot;B&quot; &quot;B&quot;</span></span><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>As
+a last step, the outcomes were written to the files to be submitted for grading
+per the project instructions:<o:p></o:p></span></p>
+
+<p class=SourceCode0><span class=GramE><span class=KeywordTok0><span
+style='font-size:10.0pt;font-family:"Trebuchet MS"'>setwd</span></span></span><span
+class=NormalTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=StringTok0><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>&quot;~/Documents/Coursera/1.
+DataScience/8. Practical Machine Learning/Course Project/Prediction Answer
+Files&quot;</span></span><span class=NormalTok0><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'>)</span></span><span style='font-size:10.0pt;
+font-family:"Trebuchet MS"'><br>
+<br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>pml_write_files
+=</span></span><span class=StringTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'> </span></span><span class=GramE><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>function(</span></span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>x){</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp; </span>n =</span></span><span class=StringTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'> </span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>length</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(x)</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp; </span>for(i in </span></span><span
+class=DecValTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>1</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>:n){</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>filename =</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>
+</span></span><span class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;
+font-family:"Trebuchet MS"'>paste0</span></span><span class=NormalTok0><span
+style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>&quot;problem_id_&quot;</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>,i,</span></span><span
+class=StringTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>&quot;.txt&quot;</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>)</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span></span></span><span
+class=KeywordTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>write.table</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>(x[i],</span></span><span
+class=DataTypeTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>file=</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>filename,</span></span><span
+class=DataTypeTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>quote=</span></span><span
+class=OtherTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>FALSE</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>,</span></span><span
+class=DataTypeTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>row.names=</span></span><span
+class=OtherTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>FALSE</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>,</span></span><span
+class=DataTypeTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>col.names=</span></span><span
+class=OtherTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>FALSE</span></span><span
+class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>)</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'><span
+style="mso-spacerun:yes">&nbsp; </span>}</span></span><br>
+<span class=NormalTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS"'>}</span></span><br>
+<span class=SpellE><span class=CommentTok0><span style='mso-ansi-font-size:
+10.0pt;font-family:"Trebuchet MS";color:windowtext;font-style:normal'>pml_write_files</span></span></span><span
+class=CommentTok0><span style='mso-ansi-font-size:10.0pt;font-family:"Trebuchet MS";
+color:windowtext;font-style:normal'>(predictions)</span></span><i
+style='mso-bidi-font-style:normal'><o:p></o:p></i></span></p>
+
+<h3><a name=conclusions></a><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>Conclusion<o:p></o:p></span></h3>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Trebuchet MS"'>Of
+the 8 models designed for this exercise, the 4 using a classification and
+regression tree approach (rpart) produced models that predicted the exercise
+class outcome no better than a coion flip. And none of those models predicted
+Classe D exercises even though that class existed in the training data set.
+Better models were produced using the random forest method: due to time
+constraints only two of the models were investigated: one with 4-fold cross
+validation and one with both pre-process and cross-validation. Both models had
+high accuracy (~99%) although Model 7 was slightly higher. Model 7 was used to
+predict the exercise class outcome of the 20 data points in the test set; with
+the error rate reported above of 0.8%, there should be only one miss at most in
+the predictions.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
